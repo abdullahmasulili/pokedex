@@ -1,7 +1,7 @@
 <template>
     <v-layout>
         <navigation-drawer />
-        <v-main>
+        <v-main class="full-height">
             <router-view />
         </v-main>
     </v-layout>
