@@ -5,7 +5,7 @@ import { useLibraryStore } from '@/store/library';
 
 const app = useAppStore()
 const lib = useLibraryStore()
-let details = ref({})
+
 let stats = [{
     name: '',
     data: []
