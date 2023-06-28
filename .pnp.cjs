@@ -30,6 +30,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["@mdi/font", "npm:7.0.96"],\
             ["@vitejs/plugin-vue", "virtual:6a42225505ae7a3810de3789ce474d784e06afb777dfff116e02c21a4e64e5779522bb3a6b60a5013429ac605fcb06751441aa04a5725bfe8bf6c4d0b6906c10#npm:4.2.3"],\
+            ["apexcharts", "npm:3.41.0"],\
             ["axios", "npm:1.4.0"],\
             ["eslint", "npm:8.43.0"],\
             ["eslint-plugin-vue", "virtual:6a42225505ae7a3810de3789ce474d784e06afb777dfff116e02c21a4e64e5779522bb3a6b60a5013429ac605fcb06751441aa04a5725bfe8bf6c4d0b6906c10#npm:9.15.1"],\
@@ -40,6 +41,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["vite-plugin-vuetify", "virtual:6a42225505ae7a3810de3789ce474d784e06afb777dfff116e02c21a4e64e5779522bb3a6b60a5013429ac605fcb06751441aa04a5725bfe8bf6c4d0b6906c10#npm:1.0.2"],\
             ["vue", "npm:3.3.4"],\
             ["vue-router", "virtual:6a42225505ae7a3810de3789ce474d784e06afb777dfff116e02c21a4e64e5779522bb3a6b60a5013429ac605fcb06751441aa04a5725bfe8bf6c4d0b6906c10#npm:4.2.2"],\
+            ["vue3-apexcharts", "virtual:6a42225505ae7a3810de3789ce474d784e06afb777dfff116e02c21a4e64e5779522bb3a6b60a5013429ac605fcb06751441aa04a5725bfe8bf6c4d0b6906c10#npm:1.4.1"],\
             ["vuetify", "virtual:6a42225505ae7a3810de3789ce474d784e06afb777dfff116e02c21a4e64e5779522bb3a6b60a5013429ac605fcb06751441aa04a5725bfe8bf6c4d0b6906c10#npm:3.3.5"],\
             ["webfontloader", "npm:1.6.28"]\
           ],\
@@ -797,6 +799,21 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["anymatch", "npm:3.1.3"],\
             ["normalize-path", "npm:3.0.0"],\
             ["picomatch", "npm:2.3.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["apexcharts", [\
+        ["npm:3.41.0", {\
+          "packageLocation": "./.yarn/cache/apexcharts-npm-3.41.0-99b2fa08ba-b578d2473f.zip/node_modules/apexcharts/",\
+          "packageDependencies": [\
+            ["apexcharts", "npm:3.41.0"],\
+            ["svg.draggable.js", "npm:2.2.2"],\
+            ["svg.easing.js", "npm:2.0.0"],\
+            ["svg.filter.js", "npm:2.0.2"],\
+            ["svg.pathmorphing.js", "npm:0.1.3"],\
+            ["svg.resize.js", "npm:1.4.3"],\
+            ["svg.select.js", "npm:3.0.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -2494,6 +2511,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["pokedex-vuetify", "workspace:."],\
             ["@mdi/font", "npm:7.0.96"],\
             ["@vitejs/plugin-vue", "virtual:6a42225505ae7a3810de3789ce474d784e06afb777dfff116e02c21a4e64e5779522bb3a6b60a5013429ac605fcb06751441aa04a5725bfe8bf6c4d0b6906c10#npm:4.2.3"],\
+            ["apexcharts", "npm:3.41.0"],\
             ["axios", "npm:1.4.0"],\
             ["eslint", "npm:8.43.0"],\
             ["eslint-plugin-vue", "virtual:6a42225505ae7a3810de3789ce474d784e06afb777dfff116e02c21a4e64e5779522bb3a6b60a5013429ac605fcb06751441aa04a5725bfe8bf6c4d0b6906c10#npm:9.15.1"],\
@@ -2504,6 +2522,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["vite-plugin-vuetify", "virtual:6a42225505ae7a3810de3789ce474d784e06afb777dfff116e02c21a4e64e5779522bb3a6b60a5013429ac605fcb06751441aa04a5725bfe8bf6c4d0b6906c10#npm:1.0.2"],\
             ["vue", "npm:3.3.4"],\
             ["vue-router", "virtual:6a42225505ae7a3810de3789ce474d784e06afb777dfff116e02c21a4e64e5779522bb3a6b60a5013429ac605fcb06751441aa04a5725bfe8bf6c4d0b6906c10#npm:4.2.2"],\
+            ["vue3-apexcharts", "virtual:6a42225505ae7a3810de3789ce474d784e06afb777dfff116e02c21a4e64e5779522bb3a6b60a5013429ac605fcb06751441aa04a5725bfe8bf6c4d0b6906c10#npm:1.4.1"],\
             ["vuetify", "virtual:6a42225505ae7a3810de3789ce474d784e06afb777dfff116e02c21a4e64e5779522bb3a6b60a5013429ac605fcb06751441aa04a5725bfe8bf6c4d0b6906c10#npm:3.3.5"],\
             ["webfontloader", "npm:1.6.28"]\
           ],\
@@ -2879,6 +2898,84 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["svg.draggable.js", [\
+        ["npm:2.2.2", {\
+          "packageLocation": "./.yarn/cache/svg.draggable.js-npm-2.2.2-91cd7475f3-b9068975d7.zip/node_modules/svg.draggable.js/",\
+          "packageDependencies": [\
+            ["svg.draggable.js", "npm:2.2.2"],\
+            ["svg.js", "npm:2.7.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["svg.easing.js", [\
+        ["npm:2.0.0", {\
+          "packageLocation": "./.yarn/cache/svg.easing.js-npm-2.0.0-0c84ce8158-0f7df78333.zip/node_modules/svg.easing.js/",\
+          "packageDependencies": [\
+            ["svg.easing.js", "npm:2.0.0"],\
+            ["svg.js", "npm:2.7.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["svg.filter.js", [\
+        ["npm:2.0.2", {\
+          "packageLocation": "./.yarn/cache/svg.filter.js-npm-2.0.2-f65ff6d47e-f0e780bfe3.zip/node_modules/svg.filter.js/",\
+          "packageDependencies": [\
+            ["svg.filter.js", "npm:2.0.2"],\
+            ["svg.js", "npm:2.7.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["svg.js", [\
+        ["npm:2.7.1", {\
+          "packageLocation": "./.yarn/cache/svg.js-npm-2.7.1-c232ccf7aa-945bfc9623.zip/node_modules/svg.js/",\
+          "packageDependencies": [\
+            ["svg.js", "npm:2.7.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["svg.pathmorphing.js", [\
+        ["npm:0.1.3", {\
+          "packageLocation": "./.yarn/cache/svg.pathmorphing.js-npm-0.1.3-83b910d5a4-bcbe1ccea9.zip/node_modules/svg.pathmorphing.js/",\
+          "packageDependencies": [\
+            ["svg.pathmorphing.js", "npm:0.1.3"],\
+            ["svg.js", "npm:2.7.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["svg.resize.js", [\
+        ["npm:1.4.3", {\
+          "packageLocation": "./.yarn/cache/svg.resize.js-npm-1.4.3-9e6b42a70f-8f4116f442.zip/node_modules/svg.resize.js/",\
+          "packageDependencies": [\
+            ["svg.resize.js", "npm:1.4.3"],\
+            ["svg.js", "npm:2.7.1"],\
+            ["svg.select.js", "npm:2.1.2"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["svg.select.js", [\
+        ["npm:2.1.2", {\
+          "packageLocation": "./.yarn/cache/svg.select.js-npm-2.1.2-d8be268fcb-1dbbb44d16.zip/node_modules/svg.select.js/",\
+          "packageDependencies": [\
+            ["svg.select.js", "npm:2.1.2"],\
+            ["svg.js", "npm:2.7.1"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["npm:3.0.1", {\
+          "packageLocation": "./.yarn/cache/svg.select.js-npm-3.0.1-9baa0ca5b5-0ce3bda86f.zip/node_modules/svg.select.js/",\
+          "packageDependencies": [\
+            ["svg.select.js", "npm:3.0.1"],\
+            ["svg.js", "npm:2.7.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["tar", [\
         ["npm:6.1.15", {\
           "packageLocation": "./.yarn/cache/tar-npm-6.1.15-44c3e71720-f23832fcee.zip/node_modules/tar/",\
@@ -3149,6 +3246,32 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "packagePeers": [\
             "@types/vue",\
+            "vue"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["vue3-apexcharts", [\
+        ["npm:1.4.1", {\
+          "packageLocation": "./.yarn/cache/vue3-apexcharts-npm-1.4.1-a434be0ab0-01f2da799d.zip/node_modules/vue3-apexcharts/",\
+          "packageDependencies": [\
+            ["vue3-apexcharts", "npm:1.4.1"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
+        ["virtual:6a42225505ae7a3810de3789ce474d784e06afb777dfff116e02c21a4e64e5779522bb3a6b60a5013429ac605fcb06751441aa04a5725bfe8bf6c4d0b6906c10#npm:1.4.1", {\
+          "packageLocation": "./.yarn/__virtual__/vue3-apexcharts-virtual-8e4c441ce5/0/cache/vue3-apexcharts-npm-1.4.1-a434be0ab0-01f2da799d.zip/node_modules/vue3-apexcharts/",\
+          "packageDependencies": [\
+            ["vue3-apexcharts", "virtual:6a42225505ae7a3810de3789ce474d784e06afb777dfff116e02c21a4e64e5779522bb3a6b60a5013429ac605fcb06751441aa04a5725bfe8bf6c4d0b6906c10#npm:1.4.1"],\
+            ["@types/apexcharts", null],\
+            ["@types/vue", null],\
+            ["apexcharts", "npm:3.41.0"],\
+            ["vue", "npm:3.3.4"]\
+          ],\
+          "packagePeers": [\
+            "@types/apexcharts",\
+            "@types/vue",\
+            "apexcharts",\
             "vue"\
           ],\
           "linkType": "HARD"\

@@ -1,12 +1,13 @@
 <script setup>
 import { useLibraryStore } from '@/store/library';
+import { useAppStore } from '@/store/app';
 import { ref, onMounted } from 'vue'
 
 const props = defineProps({
     name: String, 
     url: String
 })
-
+const app = useAppStore()
 const library = useLibraryStore()
 let pokemonDetails = ref({})
 let isLoading = ref(true)
@@ -26,6 +27,11 @@ const cardColor = (pokemonType = '') => {
     }
 }
 
+function handleOpenDetail() {
+    library.$patch({ selectedPokemon: pokemonDetails.value })
+    app.$patch({ dialog: true })
+}
+
 onMounted(() => {
     library.fetchPokemonDetails(props.url).then(data => {
         pokemonDetails.value = data
@@ -36,7 +42,12 @@ onMounted(() => {
 </script>
 
 <template>
-    <v-card v-if="!isLoading" rounded="xl" :color="cardColor(pokemonDetails.types[0].type.name)" class="py-5">
+    <v-card v-if="!isLoading" 
+        rounded="xl" 
+        :color="cardColor(pokemonDetails.types[0].type.name)" 
+        class="py-5"
+        @click="handleOpenDetail"
+    >
         <v-img  :src="pokemonDetails.sprites.other['official-artwork'].front_shiny"></v-img>
         <v-card-title>
             Name : {{ name }}

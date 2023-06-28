@@ -9,11 +9,13 @@ export const useLibraryStore = defineStore('library', {
         prevPage: null,
         types: [],
         isLoading: false,
-        isFiltered: false
+        isFiltered: false,
+        selectedPokemon: {}
     }),
     getters: {
         allPokemons: state => state.pokemons,
-        pokemonTypes: state => state.types
+        pokemonTypes: state => state.types,
+        getSelectedPokemon: state => state.selectedPokemon
     },
     actions: {
         async fetchPokemons() {

@@ -4,11 +4,24 @@
   font-family: 'Inter', sans-serif !important;
 }
 
+.items-center {
+  align-items: center;
+}
+
 .text--capitalize {
   text-transform: capitalize;
 }
 
-.text-h5 {
+.flex-column--center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.text-h5,
+.text-h3,
+.text-h4 {
+  font-weight: 600;
   font-family: 'Inter', sans-serif !important;
 }
 

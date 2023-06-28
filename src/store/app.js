@@ -4,7 +4,8 @@ import { defineStore } from 'pinia'
 export const useAppStore = defineStore('app', {
     state: () => ({
         navigationDrawer: false,
-        filterDrawer: false
+        filterDrawer: false,
+        dialog: false
     }),
     getters: {
         navigationDrawerState: (state) => state.navigationDrawer,

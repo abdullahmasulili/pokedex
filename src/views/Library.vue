@@ -2,6 +2,7 @@
 import { onMounted, ref } from 'vue'
 import PokemonCard from '@/components/PokemonCard.vue'
 import { useLibraryStore } from '@/store/library';
+import PokemonDetails from '@/components/PokemonDetails.vue';
 
 const library = useLibraryStore()
 const isLoading = ref(true)
@@ -33,4 +34,5 @@ onMounted(() => {
   <div v-if="!library.isLoading && library.pokemons.length < library.count && !library.isFiltered" class="text-center my-3" v-intersect="onEndOfPage">
     <v-progress-circular indeterminate color="primary"></v-progress-circular>
   </div>
+  <pokemon-details v-if="Object.values(library.selectedPokemon).length > 0"/>
 </template>
