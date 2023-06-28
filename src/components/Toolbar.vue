@@ -11,8 +11,8 @@ const app = useAppStore()
             <v-app-bar-nav-icon @click="app.toggleDrawer('navigation')"></v-app-bar-nav-icon>
         </template>
         <v-spacer></v-spacer>
-        <v-btn icon @click="app.toggleDrawer('filter')">
-            <v-icon>mdi-filter</v-icon>
+        <v-btn prepend-icon="mdi-filter" @click="app.toggleDrawer('filter')">
+            Filter
         </v-btn>
     </v-toolbar>
 </template>

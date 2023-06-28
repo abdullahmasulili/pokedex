@@ -7,6 +7,10 @@ const app = useAppStore()
 const lib = useLibraryStore()
 let selectedType = ref([])
 
+function handleResetFilter() {
+    window.location.reload()
+}
+
 onMounted(() => {
     lib.fetchPokemonTypes()
 })
@@ -21,7 +25,7 @@ onMounted(() => {
         <v-chip-group v-model="selectedType" column multiple class="px-3">
             <v-chip filter 
                 v-for="(type, index) in lib.types" 
-                :key="index"
+                :key="type.url"
                 :value="type.url"
                 color="primary"
             >
@@ -30,7 +34,7 @@ onMounted(() => {
             </span>
             </v-chip>
         </v-chip-group>
-        <div class="drawer__action px-3">
+        <div class="drawer__actions">
             <v-btn block 
                 append-icon="mdi-filter-check" 
                 variant="flat" 
@@ -40,6 +44,25 @@ onMounted(() => {
             >
                 Apply
             </v-btn>
+            <v-btn block 
+                append-icon="mdi-reload" 
+                variant="flat" 
+                color="primary" 
+                rounded="pill" 
+                @click="handleResetFilter"
+                :disabled="selectedType.length === 0"
+            >
+                reset
+            </v-btn>
         </div>
     </v-navigation-drawer>
 </template>
+
+<style scoped lang="scss">
+.drawer__actions {
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+</style>

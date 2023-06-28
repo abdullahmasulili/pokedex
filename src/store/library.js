@@ -25,6 +25,7 @@ export const useLibraryStore = defineStore('library', {
                     this.nextPage = next
                     this.prevPage = previous
                     this.pokemons = results
+                    this.isFiltered = false
                 })
                 .catch(err => console.log(err))
         },
@@ -46,6 +47,7 @@ export const useLibraryStore = defineStore('library', {
 
                     this.nextPage = next
                 })
+                .catch(err => console.log(err))
         },
         async fetchPokemonTypes() {
             await axios.get('https://pokeapi.co/api/v2/type')
