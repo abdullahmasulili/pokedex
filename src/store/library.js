@@ -7,9 +7,13 @@ export const useLibraryStore = defineStore('library', {
         count: 0,
         nextPage: null,
         prevPage: null,
+        types: [],
+        isLoading: false,
+        isFiltered: false
     }),
     getters: {
-        allPokemons: state => state.pokemons
+        allPokemons: state => state.pokemons,
+        pokemonTypes: state => state.types
     },
     actions: {
         async fetchPokemons() {
@@ -42,6 +46,41 @@ export const useLibraryStore = defineStore('library', {
 
                     this.nextPage = next
                 })
+        },
+        async fetchPokemonTypes() {
+            await axios.get('https://pokeapi.co/api/v2/type')
+                .then(({ data }) => {
+                    const { results } = data
+
+                    this.types = results
+                })
+                .catch(err => console.log(err))
+        },
+        async fetchPokemonsByType(urls) {
+            this.isFiltered = true
+
+            let filteredPokemons = []
+
+            for(let i = 0; i < urls.length; i++) {
+                await axios.get(urls[i])
+                    .then(({ data }) => {
+                        const { pokemon } = data
+
+                        for(let item of pokemon) {
+                            filteredPokemons.push(item.pokemon)
+                        }
+                    })
+                    .catch(err => {
+                        this.isLoading = false
+                        console.log(err)
+                    })
+
+            }
+            
+            this.isLoading = false
+            this.pokemons = filteredPokemons
+            this.nextPage = null,
+            this.prevPage = null
         }
     }
 })

@@ -24,7 +24,7 @@ const navigations = ref([
 </script>
 
 <template>
-    <v-navigation-drawer v-model="app.navigationState" permanent location="left">
+    <v-navigation-drawer permanent v-model="app.navigationDrawerState" location="left" class="d-none d-md-flex">
         <template v-slot:prepend>
             <v-list-item
                 lines="two"

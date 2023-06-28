@@ -1,5 +1,19 @@
-.ct-toolbar {
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  font-family: 'Inter', sans-serif !important;
+}
+
+.text--capitalize {
+  text-transform: capitalize;
+}
+
+.text-h5 {
+  font-family: 'Inter', sans-serif !important;
+}
+
+.toolbar--sticky {
   position: sticky !important;
   top: 0;
-  z-index: 99999;
+  z-index: 20;
 }

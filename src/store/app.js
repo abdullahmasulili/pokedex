@@ -2,15 +2,24 @@
 import { defineStore } from 'pinia'
 
 export const useAppStore = defineStore('app', {
-  state: () => ({
-    navigation: true,
-  }),
-  getters: {
-    navigationState: state => state.navigation
-  },
-  actions: {
-    toggleNavigationDrawer() {
-      this.navigation = !this.navigation
+    state: () => ({
+        navigationDrawer: false,
+        filterDrawer: false
+    }),
+    getters: {
+        navigationDrawerState: (state) => state.navigationDrawer,
+        filterDrawerState: (state) => state.filterDrawer
+    },
+    actions: {
+        toggleDrawer(drawerType) {
+            switch (drawerType) {
+                case 'navigation':
+                    this.navigationDrawer = !this.navigationDrawer
+                    break
+                case 'filter':
+                    this.filterDrawer = !this.filterDrawer
+                    break
+            }
+        }
     }
-  }
 })
