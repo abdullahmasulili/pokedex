@@ -5,7 +5,8 @@ import { ref, onMounted } from 'vue'
 
 const props = defineProps({
     name: String, 
-    url: String
+    url: String,
+    pokemon: Object
 })
 const app = useAppStore()
 const library = useLibraryStore()
@@ -46,7 +47,6 @@ onMounted(() => {
         rounded="xl" 
         :color="cardColor(pokemonDetails.types[0].type.name)" 
         class="py-5"
-        @click="handleOpenDetail"
     >
         <v-img  :src="pokemonDetails.sprites.other['official-artwork'].front_shiny"></v-img>
         <v-card-title>
@@ -62,5 +62,13 @@ onMounted(() => {
                 </v-row>
             </v-col>
         </v-card-subtitle>
+        <v-card-actions>
+            <v-btn @click="library.tagPokemonAsFavorite(props.pokemon)" :color="props.pokemon.isFavourited ? 'pink' : 'gray'" prepend-icon="mdi-heart" class="px-2">
+                <span>Favourite</span>
+            </v-btn>
+            <v-btn @click="handleOpenDetail" prepend-icon="mdi-open-in-new" class="px-2">
+                <span>Details</span>
+            </v-btn>
+        </v-card-actions>
     </v-card>
 </template>

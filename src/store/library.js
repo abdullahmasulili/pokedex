@@ -10,12 +10,14 @@ export const useLibraryStore = defineStore('library', {
         types: [],
         isLoading: false,
         isFiltered: false,
-        selectedPokemon: {}
+        selectedPokemon: {},
+        favouritePokemon: []
     }),
     getters: {
         allPokemons: state => state.pokemons,
         pokemonTypes: state => state.types,
-        getSelectedPokemon: state => state.selectedPokemon
+        getSelectedPokemon: state => state.selectedPokemon,
+        allFavouritedPokemon: state => state.favouritePokemon
     },
     actions: {
         async fetchPokemons() {
@@ -26,7 +28,12 @@ export const useLibraryStore = defineStore('library', {
                     this.count = count
                     this.nextPage = next
                     this.prevPage = previous
-                    this.pokemons = results
+                    this.pokemons = results.map(result => {
+                        return {
+                            ...result,
+                            isFavourited: false
+                        }
+                    })
                     this.isFiltered = false
                 })
                 .catch(err => console.log(err))
@@ -85,6 +92,23 @@ export const useLibraryStore = defineStore('library', {
             this.pokemons = filteredPokemons
             this.nextPage = null,
             this.prevPage = null
+        },
+        tagPokemonAsFavorite(pokemon) {
+            const index = this.pokemons.findIndex(item => item.url === pokemon.url)
+
+            if(index !== -1) {
+                this.pokemons[index].isFavourited = !this.pokemons[index].isFavourited
+
+                if(this.pokemons[index].isFavourited) {
+                    console.log('adding to favourite')
+                    this.favouritePokemon.push(this.pokemons[index])
+                } else {
+                    console.log('removing from favourite')
+                    // this.favouritePokemon.filter(item => item.url !== )
+                }
+
+                console.log(this.favouritePokemon)
+            }
         }
     }
 })

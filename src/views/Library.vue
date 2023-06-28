@@ -27,7 +27,7 @@ onMounted(() => {
   <v-col v-if="!library.isLoading">
     <v-row>
       <v-col cols="12" sm="6" md="4" lg="3" v-for="(pokemon, index) in library.allPokemons" :key="pokemon.url">
-        <pokemon-card :name="pokemon.name" :url="pokemon.url" :key="pokemon.url"/>
+        <pokemon-card :name="pokemon.name" :url="pokemon.url" :pokemon="pokemon" :key="pokemon.url"/>
       </v-col>
     </v-row>
   </v-col>
