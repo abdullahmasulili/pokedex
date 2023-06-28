@@ -20,7 +20,7 @@ const navigations = ref([
 </script>
 
 <template>
-    <v-navigation-drawer permanent>
+    <v-navigation-drawer permanent location="left">
         <template v-slot:prepend>
             <v-list-item
                 lines="two"

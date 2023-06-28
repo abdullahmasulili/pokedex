@@ -1,12 +1,12 @@
 <template>
-    <v-layout>
-        <navigation-drawer />
-        <v-main class="full-height">
-            <router-view />
-        </v-main>
-    </v-layout>
+    <navigation-drawer />
+    <v-main class="fill-height">
+        <toolbar />
+        <router-view />
+    </v-main>
 </template>
 
 <script setup>
 import NavigationDrawer from '@/components/NavigationDrawer.vue';
+import Toolbar from '@/components/Toolbar.vue';
 </script>
