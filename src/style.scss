@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  font-family: 'Inter', sans-serif !important;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.text--capitalize {
+  text-transform: capitalize;
+}
+
+.flex-column--center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.text-h5,
+.text-h3,
+.text-h4 {
+  font-weight: 600;
+  font-family: 'Inter', sans-serif !important;
+}
+
+.toolbar--sticky {
+  position: sticky !important;
+  top: 0;
+  z-index: 20;
+}

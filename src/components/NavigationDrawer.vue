@@ -1,5 +1,9 @@
 <script setup>
 import { ref } from 'vue'
+import { useAppStore } from '@/store/app';
+
+const app = useAppStore()
+
 const navigations = ref([
     {
         title: "Pokemon Library",
@@ -20,7 +24,7 @@ const navigations = ref([
 </script>
 
 <template>
-    <v-navigation-drawer permanent location="left">
+    <v-navigation-drawer permanent v-model="app.navigationDrawerState" location="left" class="d-none d-md-flex">
         <template v-slot:prepend>
             <v-list-item
                 lines="two"
