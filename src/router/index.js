@@ -5,6 +5,9 @@ const routes = [
   {
     path: '/',
     component: () => import('@/layouts/default/Default.vue'),
+    redirect: to => {
+      return 'library'
+    },
     children: [
       {
         path: 'library',
